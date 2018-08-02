@@ -1,0 +1,8 @@
+<!--ngClasse si click à 0 pas de couleur, si loveIts > 0 affiche vert, si loveIts < 0 affiche rouge-->
+<li [ngClass]="{'list-group-item': true, 'list-group-item-success': post.loveIts > 0, 'list-group-item-danger': post.loveIts < 0 }">
+  <h4>{{ post.title }} -- {{ post.created_at | date: 'dd/MM/yyyy, H:mm'}}</h4>
+  <p>{{ post.content }}</p>
+  <!--Liaison des boutons à un événement du dom-->
+  <button class="btn btn-success" (click)="onAddlove()">Love it</button>
+  <button class="btn btn-danger" (click)="onAddDontLove()">Don't love it</button>
+</li>
